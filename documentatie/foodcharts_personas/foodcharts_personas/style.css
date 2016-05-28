@@ -1,0 +1,67 @@
+img { border: none; }
+ul {margin:0; list-style-type:none;}
+fieldset { border: none; margin:0; padding: 0;}
+a {color:#3CA2A2;}
+a:hover {color:#215A6D;}
+legend { display: none; }
+.hidden { display:none;}
+.clear {clear:both;}
+
+body{
+	margin:0;
+	padding:0;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:14px;
+	background:#fff;
+}
+
+header {padding:5px; background-color: #2D2D29; overflow: hidden;}
+header h1 { margin:5px 10px 0px 10px; padding:0; color: #DFECE6; font-size:1.8em; float:left;}
+header #logo {float:right; margin: 0;}
+article.persona {background-color: #fff; border:solid 1px #493736; float:left; margin:5px 10px; width:48%; }
+.personaInfo figure {margin:0; padding: 0;}
+.personaInfo {border-bottom:solid 1px #493736; padding:5px; overflow: hidden;}
+.personaInfo img {float:left; }
+.personaInfo .personaBackground {float:right; width:73%; }
+.personaInfo h3, .personaInfo .personaBackground h4, .personaInfo .personaBackground h5, .personaDetails h4, .personaDetails h5, .personaScenarios h5, .otherDetails h5 {margin:0 0 5px; padding:5px; background-color: #2D2D29; color: #DFECE6; }
+.personaInfo .personaBackground ul, .personaDetails ul, .personaScenarios ul, .otherDetails ul {margin:0; padding:0 5px;}
+.personaInfo p, .personaDetails p, .personaScenarios p, .otherDetails p {margin:2px; padding:0;}
+
+.personaDetails ul li {list-style-type: square; margin:0 0 0 15px;}
+.personaDetails {border-bottom:solid 1px #493736; overflow: hidden; padding: 5px;}
+.personaDetails .detailsLeft h5 {padding: 5px 5px 5px 10px;}
+.personaDetails .detailsLeft {width:38%; float:left; margin-right:5px;}
+.personaDetails .detailsLeft .leftGroup {}
+.personaDetails .detailsRight {width:61%; float: right; }
+
+.personaScenarios, .otherDetails {clear:both; padding:5px; overflow: hidden;}
+.personaScenarios {border-bottom:solid 1px #493736;}
+
+footer {clear:both; margin:5px 10px; padding:0;}
+
+@media screen and (max-width:1200px){
+	.personaInfo .personaBackground {float:left; width:100%; margin-top:5px;}
+}
+@media screen and (max-width:1120px){
+	.personaDetails .detailsLeft, .personaDetails .detailsRight {width:100%; float: left; }
+	article.persona {width:98%; margin: 5px 2px;} 
+}
+
+@media print {
+	
+	body{
+		margin:0;
+		padding:0;
+		font-family:Arial, Helvetica, sans-serif;
+		font-size:14px;
+		background:#fff;
+	}
+	header {margin: 0;}
+	header #logo {display: none;}
+	article.persona {width:99%; margin:10px 2px;} 
+	.personaInfo h3, .personaInfo .personaBackground h4, .personaInfo .personaBackground h5, .personaDetails h4, .personaDetails h5, .personaScenarios h5, .otherDetails h5 {margin:0 0 5px; padding:5px; background-color: #ccc; color: #111; 
+	-webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px;}
+	.personaDetails .detailsLeft {width:38%; float:left; margin-right:5px;}
+	.personaDetails .detailsRight {width:61%; float: right; }
+	.personaScenarios {border-bottom:solid 1px #493736;}
+}

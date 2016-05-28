@@ -1,0 +1,33 @@
+header {
+  padding: 20px 0px 20px;
+  .menu,
+  .logo {
+    display: inline-block;
+  }
+  .logo {
+    margin-left: 20px;
+  }
+
+  border-bottom: 1px solid @gray;
+}
+
+.menu-hidden + .col-md-9 {
+  width: 100%;
+  transition: all 200ms;
+}
+
+.aside-menu + .col-md-9 {
+  transition: all 200ms;
+  padding: 0;
+}
+
+.aside-menu {
+  border-right: 1px solid @gray;
+}
+
+html,
+body,
+.main-wrapper,
+.aside-menu {
+  height: 100%; 
+}

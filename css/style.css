@@ -1,0 +1,68 @@
+header {
+  padding: 20px 0px 20px;
+  border-bottom: 1px solid #d2d2d2;
+}
+header .menu,
+header .logo {
+  display: inline-block;
+}
+header .logo {
+  margin-left: 20px;
+}
+.menu-hidden + .col-md-9 {
+  width: 100%;
+  transition: all 200ms;
+}
+.aside-menu + .col-md-9 {
+  transition: all 200ms;
+  padding: 0;
+}
+.aside-menu {
+  border-right: 1px solid #d2d2d2;
+}
+html,
+body,
+.main-wrapper,
+.aside-menu {
+  height: 100%;
+}
+div.menu-hidden {
+  margin-left: -25%;
+  transition: all 200ms;
+}
+.aside-menu {
+  transition: all 200ms;
+  margin-left: 0;
+}
+.aside-menu.col-md-3 {
+  padding: 0;
+}
+.aside-menu nav {
+  margin-top: 20px;
+}
+.aside-menu nav a {
+  padding: 20px;
+  text-decoration: none;
+  display: block;
+  color: #000000;
+  transition: all 200ms;
+}
+.aside-menu nav a:hover {
+  transition: all 200ms;
+  background-color: #d2d2d2;
+}
+.category {
+  height: 100px;
+  border: 1px solid #009688;
+  top: 100px;
+  margin: 30px;
+  font-family: SourceSansPro;
+  font-size: 40px;
+  font-weight: bold;
+  text-align: center;
+  line-height: 90px;
+}
+@font-face {
+  font-family: SourceSansPro;
+  src: url('../css/fonts/SourceSansPro-ExtraLight.otf');
+}
