@@ -9,8 +9,12 @@
                      }
                  });
 app.run(function ($rootScope) {
-    $rootScope.data = {
-        
+    var size = localStorage.getItem('bodySizeClass');
+
+    if(size){
+        $rootScope.bodyClass = size;
+    }else{
+        $rootScope.bodyClass = "body25";
     }
 });
 
@@ -21,17 +25,17 @@ app.config(function ($routeProvider, $stateProvider, $urlRouterProvider, $locati
              url: '/',
              templateUrl: 'views/home.html',
              controller: "homeController"
-         });
-        // .state('/register', {
-            // url: '/register',
-            // templateUrl: 'views/register.html',
-            // controller: "loginController"
-        // })
-        // .state('/home', {
-            // url: '/home',
-            // templateUrl: 'views/home.html',
-            // controller: "homeController"
-        // })
+         })
+        .state('/filters', {
+            url: '/filters',
+            templateUrl: 'views/filters.html',
+            controller: "filtersController"
+        })
+        .state('/settings', {
+            url: '/settings',
+            templateUrl: 'views/settings.html',
+            controller: "settingsController"
+        });
         // .state('/activities', {
             // url: '/activities',
             // templateUrl: 'views/activities.html',
@@ -42,9 +46,7 @@ app.config(function ($routeProvider, $stateProvider, $urlRouterProvider, $locati
             // controller: "personController"
         // });
 
-    $urlRouterProvider.otherwise('/');
-
-    
+    $urlRouterProvider.otherwise('/');    
 });
 
 app.service("settings", function () {

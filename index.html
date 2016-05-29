@@ -11,24 +11,27 @@
   <script src="js/angular-route.js"></script>
   <script src="js/angular-ui-router.min.js"></script>
   <script src="js/ui-bootstrap-tpls-0.11.2.min.js"></script>
+  <script src="js/Chart.js"></script>
   
   <!--Controllers-->
   <script src = "controllers/appController.js"></script>
   <script src = "controllers/homeController.js"></script>
   <script src = "controllers/modalController.js"></script>
+  <script src = "controllers/filtersController.js"></script>
+  <script src = "controllers/settingsController.js"></script>
   
   <!--Services-->
   
   
 </head>
-<body>
+<body class="{{bodyClass}}">
   <div id="loadingDiv" class="spinnerDiv" style="display: none;"></div>
   <div class="row-fluid main-wrapper">
     <div class="col-md-3 menu-hidden aside-menu">
       <nav>
         <a href="/">Home</a>
         <a href="#">About</a>
-        <a href="#">Help</a>
+        <a href="/#/settings">Settings</a>
         <a href="#">Contact</a>
       </nav>
     </div>

@@ -1,14 +1,25 @@
 .category{
-  height: 100px;
-  border: 1px solid @teal-500;
+  height: 150px;
+  width: 100%;
+  border: 1px solid @teal-200;
+  color: @teal-500;
   top: 100px;
   margin:30px;
 
   font-family: SourceSansPro;
-  font-size: 40px;
+  font-size: 140%;
   font-weight: bold;
 
   text-align: center;
-  line-height: 90px;    
+  line-height: 140px; 
+
+  background-color: @background-grey;
 }
 
+.category:focus{
+  outline: 0;
+}
+
+.category:hover{
+  background-color: @teal-50;
+}

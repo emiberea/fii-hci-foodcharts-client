@@ -6,10 +6,11 @@
   //   $rootScope.loggedUser = localStorage.getItem("loggedUser");
   // }
   
-  // $scope.goToActivities = function(){
-  //   console.log("GOING TO ACTIVITIES");
-  //   $state.go("/activities");
-  // };
+  $scope.goToFilters = function(){
+    console.log("GOING TO Filters");
+    $state.go("/filters");
+  };
+
 
   // $scope.goToPersons = function(){
   //   $state.go("/persons");
