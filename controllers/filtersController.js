@@ -40,7 +40,6 @@ app.controller("filtersController", function ($scope, $rootScope, $http, $modal,
     { id: 10, label: ' > 900'}
   ];
 
-
   $scope.readFoodJson = function(){
     $http.get('/json/food_name.json')
          .then(function(msg){       
@@ -189,6 +188,8 @@ app.controller("filtersController", function ($scope, $rootScope, $http, $modal,
     }else{
       $scope.foodOptions = $scope.originalFoodOptions;
     }
+
+    $rootScope.nutritionForFoodFilter = [];
   } 
 
   $scope.filterByFoodSource = function(param, checked){
@@ -215,5 +216,136 @@ app.controller("filtersController", function ($scope, $rootScope, $http, $modal,
         $scope.foodOptions = $scope.originalFoodOptions;
       }
 
+      $rootScope.nutritionForFoodFilter = [];
   }
+
+  $scope.filterByFood = function(param, checked, index){  
+    var filteredNutrients = [],
+        nutrients = $scope.nutrientAmount,
+        currentSelectedFood = $scope.foodOptions[index];
+
+    if(checked){
+      $rootScope.foodsFilters.push(param);
+    }else{
+      var index = $rootScope.foodsFilters.indexOf(param);
+      if(index > -1)
+        $rootScope.foodsFilters.splice(index, 1);
+    }
+
+    if(checked){
+      for(var i = 0; i < nutrients.length; i++){        
+        if(nutrients[i].FoodID == param){
+          var currentNutrient = getNutrientById(nutrients[i].NutrientID),
+              newNutrient = {
+                nutrientName: currentNutrient.NutrientName,
+                nutrientValue: nutrients[i].NutrientValue,
+                nutrientDecimals: currentNutrient.NutrientDecimals,
+                nutrientUnit: currentNutrient.NutrientUnit
+              };
+
+           filteredNutrients.push(newNutrient);
+        }        
+      } 
+      $rootScope.nutritionForFoodFilter.push({
+        foodId: currentSelectedFood.foodId,
+        foodSourceId: currentSelectedFood.foodSourceId,
+        foodGroupId: currentSelectedFood.foodGroupId,
+        description: currentSelectedFood.description,
+        nutrients: filteredNutrients
+      })      
+    }else{
+      for(var j = 0; j < $rootScope.nutritionForFoodFilter.length; j++){
+        if($rootScope.nutritionForFoodFilter[j].foodId == param){
+          $rootScope.nutritionForFoodFilter.splice(j, 1);
+          break;
+        }
+      }
+    }
+
+    showDiagramBasedOnNutrients();
+    console.log($rootScope.nutritionForFoodFilter)
+  }
+
+  getFoodById = function(foodId){
+    var foods = $scope.originalFoodOptions;
+
+    for(var i = 0; i < foods.length; i++){
+      if(foods[i].foodId == foodId){
+        return foods[i];
+      }
+    }
+  }
+
+  getNutrientById = function(nutrientId){
+    var nutrients = $scope.nutrientName;
+   // console.log(nutrientId);
+    for(var i = 0; i < nutrients.length; i++){
+      if(nutrients[i].NutrientID == nutrientId){
+        return nutrients[i];
+      }
+    }
+  }
+
+  showDiagramBasedOnNutrients = function(){
+    var foods = $rootScope.nutritionForFoodFilter;
+
+    if(foods.length == 1){
+      showPieChartDiagram(foods[0]);
+    }
+  }
+
+  showPieChartDiagram = function(food){
+    var nutrients = food.nutrients,
+        canvas = document.getElementById('responseChart'),
+        labels = [],
+        infoData = [],
+        options, pieChart;
+
+
+
+    for(var i = 0; i < nutrients.length; i++){
+      var unit = nutrients[i].nutrientUnit,
+          name = nutrients[i].nutrientName,
+          value = nutrients[i].nutrientValue;
+
+      if(unit !="kCal" && unit != "kJ" && unit != "NE"){
+       
+        if(value > 0){
+          if(unit == "mg"){
+            infoData.push(value / 1000);
+          }else if(unit == "µg"){
+            infoData.push(value / 1000000);
+          }else{
+            infoData.push(value);
+          }
+
+          labels.push(name);
+        }
+        
+      }
+    }
+    console.log(infoData)
+    options = {
+      responsive: true,
+      responsiveAnimationDuration: 500,
+      fontSize: 15
+    };
+    
+    pieChart = new Chart(canvas,{
+      type: 'pie',
+      data: {
+        labels: labels,
+        datasets: [
+          {
+            data: infoData,
+            backgroundColor: $rootScope.colors
+          }
+        ]
+      },
+      options: options
+    });
+
+    $scope.selectedChartType = 'pie';
+  }
+
 });

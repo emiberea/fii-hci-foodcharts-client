@@ -27,7 +27,7 @@
                 <p> Food </p>
                 <span ng-repeat="food in foodOptions | limitTo: 6 ">
                   <label class="checkbox" for="{{food.foodId}}">
-                    <input type="checkbox" ng-model="selection.ids[food.foodId]" name="group" id="{{food.foodId}}" />
+                    <input type="checkbox" ng-model="selectedFoodOption" ng-change="filterByFood(food.foodId, selectedFoodOption, $index)" name="group" id="{{food.foodId}}" />
                     {{food.description | capitalize}}
                   </label>   
                 </span>  
@@ -76,6 +76,15 @@
                     </div>
                     <div class="col-md-4"></div>
                     <div class="col-md-4"><button class="editColors">Edit colors</button></div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-1"></div>
+                    <div class="col-md-10">
+                        <canvas id="responseChart" height="100%" width="100%"></canvas>
+                    </div>
+                    <div class="col-md-1"></div>
+
                 </div>
            </div>
        </div>
