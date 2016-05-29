@@ -5,7 +5,7 @@
 
             <section>
                 <p> Group </p>
-                <span ng-repeat="group in foodGroupShortOptions ">
+                <span ng-repeat="group in foodGroupOptions | limitTo: 6 ">
                   <label class="checkbox" for="{{group.id}}">
                     <input type="checkbox" ng-model="selectedFoodGroupOption" ng-change="filterByFoodGroup(group.id, selectedFoodGroupOption )" name="group" id="{{group.id}}" />
                     {{group.name | capitalize}}
@@ -15,9 +15,9 @@
 
             <section>
                 <p> Source </p>
-                <span ng-repeat="source in foodSourceShortOptions">
+                <span ng-repeat="source in foodSourceOptions | limitTo: 6">
                   <label class="checkbox" for="{{source.id}}">
-                    <input type="checkbox" ng-model="selection.ids[source.id]" name="source" id="{{source.id}}" />
+                    <input type="checkbox" ng-model="selectedFoodGroupOption" ng-change="filterByFoodSource(source.id, selectedFoodGroupOption)" name="source" id="{{source.id}}" />
                     {{source.name | capitalize}}
                   </label>   
                 </span>  
@@ -25,7 +25,7 @@
 
             <section>
                 <p> Food </p>
-                <span ng-repeat="food in foodOptions | limitTo:6 ">
+                <span ng-repeat="food in foodOptions | limitTo: 6 ">
                   <label class="checkbox" for="{{food.foodId}}">
                     <input type="checkbox" ng-model="selection.ids[food.foodId]" name="group" id="{{food.foodId}}" />
                     {{food.description | capitalize}}

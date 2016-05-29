@@ -42,6 +42,7 @@ app.run(function ($rootScope) {
     }
 
     $rootScope.groupFilters = [];
+    $rootScope.sourceFilters = [];
 });
 
 

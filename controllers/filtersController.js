@@ -167,7 +167,7 @@ app.controller("filtersController", function ($scope, $rootScope, $http, $modal,
   }
 
   $scope.filterByFoodGroup = function(param, checked){
-    var items = $scope.originalFoodOptions,
+    var items = $scope.foodOptions,
         filtered = [];
 
     if(checked){
@@ -189,6 +189,31 @@ app.controller("filtersController", function ($scope, $rootScope, $http, $modal,
     }else{
       $scope.foodOptions = $scope.originalFoodOptions;
     }
+  } 
+
+  $scope.filterByFoodSource = function(param, checked){
+     var items = $scope.foodOptions,
+        filtered = [];        
+
+      if(checked){
+        $rootScope.sourceFilters.push(param);
+      }else{
+        var index = $rootScope.sourceFilters.indexOf(param);
+        if(index > -1)
+          $rootScope.sourceFilters.splice(index, 1);
+      } 
+
+      if($rootScope.sourceFilters.length > 0){
+        for(var i = 0; i < items.length; i++){      
+          
+          if($rootScope.sourceFilters.indexOf(items[i].foodSourceId) > -1){          
+            filtered.push(items[i]);
+          }
+        }
+        $scope.foodOptions = filtered;
+      }else{
+        $scope.foodOptions = $scope.originalFoodOptions;
+      }
+
   }
-  
 });
