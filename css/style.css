@@ -74,13 +74,25 @@ div.menu-hidden {
 .filter-container {
   height: 100%;
 }
+.filter-container label {
+  margin-left: 20px;
+}
+.filter-container p span {
+  display: block;
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+.filter-container section {
+  margin-bottom: 15px;
+}
+.filter-container section p {
+  border-bottom: 1px solid #d2d2d2;
+}
 .filters-menu {
   border-right: 1px solid #d2d2d2;
   height: 100%;
   position: relative;
-}
-.filters-menu h3 {
-  margin-bottom: 20px;
 }
 .advanced {
   background-color: #009688;
@@ -164,11 +176,8 @@ div.menu-hidden {
   font-size: 25px !important;
   height: 100%;
 }
-.body30 {
-  background-color: #FAFAFA !important;
-  font-family: SourceSansPro !important;
-  font-size: 30px !important;
-  height: 100%;
+.body25 label {
+  font-size: 18px;
 }
 .body20 {
   background-color: #FAFAFA !important;
@@ -176,11 +185,26 @@ div.menu-hidden {
   font-size: 20px !important;
   height: 100%;
 }
+.body20 label {
+  font-size: 15px;
+}
+.body30 {
+  background-color: #FAFAFA !important;
+  font-family: SourceSansPro !important;
+  font-size: 30px !important;
+  height: 100%;
+}
+.body30 label {
+  font-size: 22px;
+}
 .body35 {
   background-color: #FAFAFA !important;
   font-family: SourceSansPro !important;
   font-size: 35px !important;
   height: 100%;
+}
+.body35 label {
+  font-size: 26px;
 }
 @font-face {
   font-family: SourceSansPro;

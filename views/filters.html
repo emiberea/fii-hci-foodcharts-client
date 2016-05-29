@@ -1,20 +1,59 @@
 <div class="filter-container">
     <div class="row-fluid">
        <div class="col-md-3 filters-menu">
-            <h3>Filters</h3>
-            fedifun
-            fdsfsd
-            <p>fsdfds</p>
-            <p>fsdfds</p>
-            <p>fsdfds</p>
-            <p>fsdfds</p>
-            <p>fsdfds</p>
-            <p>fsdfds</p>
-            <p>fsdfds</p>
-            <p>fsdfds</p>
-            <p>fsdfds</p>
-            <p>fsdfds</p>
-            <p>fsdfds</p>
+            <p><span>Filters</span></p>
+
+            <section>
+                <p> Group </p>
+                <span ng-repeat="group in foodGroupShortOptions">
+                  <label class="checkbox" for="{{group.foodGroupId}}">
+                    <input type="checkbox" ng-model="selection.ids[group.foodGroupId]" name="group" id="{{group.foodGroupId}}" />
+                    {{group.name | capitalize}}
+                  </label>   
+                </span>  
+            </section>
+
+            <section>
+                <p> Source </p>
+                <span ng-repeat="source in foodSourceShortOptions">
+                  <label class="checkbox" for="{{source.foodSourceId}}">
+                    <input type="checkbox" ng-model="selection.ids[source.foodSourceId]" name="source" id="{{source.foodSourceId}}" />
+                    {{source.name | capitalize}}
+                  </label>   
+                </span>  
+            </section>
+
+            <section>
+                <p> Food </p>
+                <span ng-repeat="food in foodShortOptions">
+                  <label class="checkbox" for="{{food.foodId}}">
+                    <input type="checkbox" ng-model="selection.ids[food.foodId]" name="group" id="{{food.foodId}}" />
+                    {{food.description | capitalize}}
+                  </label>   
+                </span>  
+            </section>
+
+            <section>
+                <p> Nutrients </p>
+                <span ng-repeat="nutrient in nutrientShortOptions">
+                  <label class="checkbox" for="{{nutrient.id}}">
+                    <input type="checkbox" ng-model="selection.ids[nutrient.id]" name="group" id="{{nutrient.id}}" />
+                    {{nutrient.name | capitalize}}
+                  </label>   
+                </span>  
+            </section>
+
+            <section>
+                <p> Calories </p>
+                <span ng-repeat="calorie in calories">
+                  <label class="checkbox" for="{{calorie.id}}">
+                    <input type="checkbox" ng-model="selection.ids[calorie.id]" name="calorie" id="{{calorie.id}}" />
+                    {{calorie.label | capitalize}}
+                  </label>   
+                </span>  
+            </section>
+           
+
             <button class="advanced">Advanced</button>
        </div>
 
@@ -28,7 +67,11 @@
                 <div class="filter-crumbels"></div>
 
                 <div class="row">
-                    <div class="col-md-4"><select></select></div>
+                    <div class="col-md-4">
+                        <select name="chartTypeSelect" id="chartTypeSelect" ng-model="selectedChartType">
+                          <option ng-repeat="option in availableCharts" value="{{option.id}}" ng-selected="changeChartType()">{{option.name}}</option>
+                        </select>                        
+                    </div>
                     <div class="col-md-4"></div>
                     <div class="col-md-4"><button class="editColors">Edit colors</button></div>
                 </div>
