@@ -9,7 +9,8 @@ app.controller("filtersController", function ($scope, $rootScope, $http, $modal,
   $scope.nutrientShortOptions = [];
 
   $scope.foodOptions = [];
-  $scope.foodShortOptions = [];
+  //$scope.foodShortOptions = [];
+  $scope.originalFoodOptions = [];
 
   $scope.foodGroupOptions = [];
   $scope.foodGroupShortOptions = [];
@@ -48,9 +49,9 @@ app.controller("filtersController", function ($scope, $rootScope, $http, $modal,
 
           for(var i=0; i< data.length; i++){    
             var food = {
-              foodId: data[i].FoodID,
-              foodSourceId: data[i].FoodSourceID,
-              foodGroupId: data[i].FoodGroupID,
+              foodId: parseInt(data[i].FoodID),
+              foodSourceId: parseInt(data[i].FoodSourceID),
+              foodGroupId: parseInt(data[i].FoodGroupID),
               description: data[i].FoodDescription
             },
               group = {
@@ -66,10 +67,12 @@ app.controller("filtersController", function ($scope, $rootScope, $http, $modal,
             addOnceToArray(group, $scope.foodGroupOptions, $scope.foodGroupShortOptions);
             addOnceToArray(source, $scope.foodSourceOptions, $scope.foodSourceShortOptions);
 
-            if( i < 6){
-              $scope.foodShortOptions.push(food);
-            }
+            // if( i < 6){
+            //   $scope.foodShortOptions.push(food);
+            // }
           }
+
+          $scope.originalFoodOptions = $scope.foodOptions;
 
          });
   };
@@ -161,6 +164,31 @@ app.controller("filtersController", function ($scope, $rootScope, $http, $modal,
 
   $scope.changeChartType = function(){
     console.log("chartType", $scope.selectedChartType);
+  }
+
+  $scope.filterByFoodGroup = function(param, checked){
+    var items = $scope.originalFoodOptions,
+        filtered = [];
+
+    if(checked){
+      $rootScope.groupFilters.push(param);
+    }else{
+      var index = $rootScope.groupFilters.indexOf(param);
+      if(index > -1)
+        $rootScope.groupFilters.splice(index, 1);
+    }    
+
+    if($rootScope.groupFilters.length > 0){
+      for(var i = 0; i < items.length; i++){      
+        
+        if($rootScope.groupFilters.indexOf(items[i].foodGroupId) > -1){          
+          filtered.push(items[i]);
+        }
+      }
+      $scope.foodOptions = filtered;
+    }else{
+      $scope.foodOptions = $scope.originalFoodOptions;
+    }
   }
   
 });

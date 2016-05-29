@@ -11,10 +11,25 @@
                  .filter('capitalize', function() {
                     return function(input, scope) {
                         if (input != null)
-                        input = input.toLowerCase();
+                            input = input.toLowerCase();
                         return input.substring(0,1).toUpperCase() + input.substring(1);
                   }
-                });
+                 });
+                 // .filter('groups', function($rootScope){
+                    
+                 //    return function(input, a, b){
+                 //        var filters = $rootScope.groupFilters;
+
+                 //        if(filters.length == 0){
+                 //            return input;
+                 //        }else{
+                 //            for(var i = 0; i < filters.length; i++){
+                 //                if(input.foodGroupId == filters.id)
+                 //                    return input;
+                 //            }                            
+                 //        }                        
+                 //    }
+                 // });
 
 
 app.run(function ($rootScope) {
@@ -25,6 +40,8 @@ app.run(function ($rootScope) {
     }else{
         $rootScope.bodyClass = "body25";
     }
+
+    $rootScope.groupFilters = [];
 });
 
 
