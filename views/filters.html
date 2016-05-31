@@ -5,56 +5,66 @@
 
             <section>
                 <p> Group </p>
-                <span ng-repeat="group in foodGroupOptions | limitTo: 6 ">
-                  <label class="checkbox" for="{{group.id}}">
-                    <input type="checkbox" ng-model="selectedFoodGroupOption" ng-change="filterByFoodGroup(group.id, selectedFoodGroupOption )" name="group" id="{{group.id}}" />
-                    {{group.name | capitalize}}
-                  </label>   
-                </span>  
+                <!-- | limitTo: 6 -->
+                <section class="dataScroll" id="mySection">
+                  <span ng-repeat="group in foodGroupOptions  ">
+                    <label class="checkbox" for="{{group.id}}">
+                      <input type="checkbox" ng-model="selectedFoodGroupOption" ng-change="filterByFoodGroup(group.id, selectedFoodGroupOption )" name="group" id="{{group.id}}" />
+                      {{group.name | capitalize}}
+                    </label>   
+                  </span>  
+                </section>
             </section>
 
             <section>
                 <p> Source </p>
-                <span ng-repeat="source in foodSourceOptions | limitTo: 6">
-                  <label class="checkbox" for="{{source.id}}">
-                    <input type="checkbox" ng-model="selectedFoodGroupOption" ng-change="filterByFoodSource(source.id, selectedFoodGroupOption)" name="source" id="{{source.id}}" />
-                    {{source.name | capitalize}}
-                  </label>   
-                </span>  
+                <section class="dataScroll">
+                  <span ng-repeat="source in foodSourceOptions | limitTo: 6">
+                    <label class="checkbox" for="{{source.id}}">
+                      <input type="checkbox" ng-model="selectedFoodGroupOption" ng-change="filterByFoodSource(source.id, selectedFoodGroupOption)" name="source" id="{{source.id}}" />
+                      {{source.name | capitalize}}
+                    </label>   
+                  </span>  
+                </section>
             </section>
 
             <section>
                 <p> Food </p>
-                <span ng-repeat="food in foodOptions | limitTo: 6 ">
-                  <label class="checkbox" for="{{food.foodId}}">
-                    <input type="checkbox" ng-model="selectedFoodOption" ng-change="filterByFood(food.foodId, selectedFoodOption, $index)" name="group" id="{{food.foodId}}" />
-                    {{food.description | capitalize}}
-                  </label>   
-                </span>  
+                <section class="dataScroll">
+                  <span ng-repeat="food in foodOptions | limitTo: 6 ">
+                    <label class="checkbox" for="{{food.foodId}}">
+                      <input type="checkbox" ng-model="selectedFoodOption" ng-change="filterByFood(food.foodId, selectedFoodOption, $index)" name="group" id="{{food.foodId}}" />
+                      {{food.description | capitalize}}
+                    </label>   
+                  </span>  
+                </section>
             </section>
 
             <section>
                 <p> Nutrients </p>
-                <span ng-repeat="nutrient in nutrientShortOptions">
-                  <label class="checkbox" for="{{nutrient.id}}">
-                    <input type="checkbox" ng-model="selection.ids[nutrient.id]" name="group" id="{{nutrient.id}}" />
-                    {{nutrient.name | capitalize}}
-                  </label>   
-                </span>  
+                <section class="dataScroll">
+                  <span ng-repeat="nutrient in nutrientShortOptions">
+                    <label class="checkbox" for="{{nutrient.id}}">
+                      <input type="checkbox" ng-model="selectedNutrientOption" ng-change="filterByNutrient(nutrient.id, selectedNutrientOption, $index)" name="group" id="{{nutrient.id}}" />
+                      {{nutrient.name | capitalize}}
+                    </label>   
+                  </span> 
+                </section> 
             </section>
 
             <section>
                 <p> Calories </p>
-                <span ng-repeat="calorie in calories">
-                  <label class="checkbox" for="{{calorie.id}}">
-                    <input type="checkbox" ng-model="selection.ids[calorie.id]" name="calorie" id="{{calorie.id}}" />
-                    {{calorie.label | capitalize}}
-                  </label>   
-                </span>  
-            </section>
-           
+                <section class="dataScroll">
+                  <span ng-repeat="calorie in calories">
+                    <label class="checkbox" for="{{calorie.id}}">
+                      <input type="checkbox" ng-model="selection.ids[calorie.id]" name="calorie" id="{{calorie.id}}" />
+                      {{calorie.label | capitalize}}
+                    </label>   
+                  </span>  
+                <section class="dataScroll">
+            </section>  
 
-            <button class="advanced">Advanced</button>
+            <!-- <button class="advanced">Advanced</button> -->
        </div>
 
 
@@ -71,7 +81,7 @@
                 <div class="row">
                     <div class="col-md-4">
                         <select name="chartTypeSelect" id="chartTypeSelect" ng-model="selectedChartType">
-                          <option ng-repeat="option in availableCharts" value="{{option.id}}" ng-selected="changeChartType">{{option.name}}</option>
+                          <option ng-repeat="option in availableCharts" value="{{option.id}}" ng-selected="changeChartType()">{{option.name}}</option>
                         </select>                        
                     </div>
                     <div class="col-md-4"></div>

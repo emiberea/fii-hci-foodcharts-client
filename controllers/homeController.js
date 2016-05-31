@@ -11,6 +11,7 @@
     $state.go("/filters");
   };
 
+  
 
   // $scope.goToPersons = function(){
   //   $state.go("/persons");
