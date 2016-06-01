@@ -1,76 +1,81 @@
 <div class="filter-container">
     <div class="row-fluid">
        <div class="col-md-3 filters-menu">
-            <p><span>Filters</span></p>
+            <p><span>Filters
+                <a href="" class="filtersShowHide" ng-show="showDown" ng-click="showDown=!showDown; showFilters=false; showResults=true">
+                    <span class="glyphicon glyphicon-chevron-down" ng-click=""></span>
+                </a>
+                <a href="" class="filtersShowHide" ng-show="!showDown" ng-click="showDown=!showDown; showFilters=true; showResults=false">
+                    <span class="glyphicon glyphicon-chevron-up"></span>
+                </a>
+            </span></p>
 
-            <section>
-                <p> Group </p>
-                <!-- | limitTo: 6 -->
-                <section class="dataScroll" id="mySection">
-                  <span ng-repeat="group in foodGroupOptions  ">
-                    <label class="checkbox" for="{{group.id}}">
-                      <input type="checkbox" ng-model="selectedFoodGroupOption" ng-change="filterByFoodGroup(group.id, selectedFoodGroupOption )" name="group" id="{{group.id}}" />
-                      {{group.name | capitalize}}
-                    </label>   
-                  </span>  
+            <div ng-show="showFilters">
+                <section class="filterType">
+                    <p> Group </p>
+                    <!-- | limitTo: 6 -->
+                    <section class="dataScroll" id="mySection">
+                      <span ng-repeat="group in foodGroupOptions  ">
+                        <label class="checkbox" for="{{group.id}}">
+                            <input type="checkbox" ng-model="selectedFoodGroupOption" ng-change="filterByFoodGroup(group.id, selectedFoodGroupOption )" name="group" id="{{group.id}}" />
+                            {{group.name | capitalize}}
+                        </label>
+                      </span>
+                    </section>
                 </section>
-            </section>
 
-            <section>
-                <p> Source </p>
-                <section class="dataScroll">
-                  <span ng-repeat="source in foodSourceOptions | limitTo: 6">
-                    <label class="checkbox" for="{{source.id}}">
-                      <input type="checkbox" ng-model="selectedFoodGroupOption" ng-change="filterByFoodSource(source.id, selectedFoodGroupOption)" name="source" id="{{source.id}}" />
-                      {{source.name | capitalize}}
-                    </label>   
-                  </span>  
+                <section class="filterType">
+                    <p> Source </p>
+                    <section class="dataScroll">
+                      <span ng-repeat="source in foodSourceOptions">
+                        <label class="checkbox" for="{{source.id}}">
+                            <input type="checkbox" ng-model="selectedFoodGroupOption" ng-change="filterByFoodSource(source.id, selectedFoodGroupOption)" name="source" id="{{source.id}}" />
+                            {{source.name | capitalize}}
+                        </label>
+                      </span>
+                    </section>
                 </section>
-            </section>
 
-            <section>
-                <p> Food </p>
-                <section class="dataScroll">
-                  <span ng-repeat="food in foodOptions | limitTo: 6 ">
-                    <label class="checkbox" for="{{food.foodId}}">
-                      <input type="checkbox" ng-model="selectedFoodOption" ng-change="filterByFood(food.foodId, selectedFoodOption, $index)" name="group" id="{{food.foodId}}" />
-                      {{food.description | capitalize}}
-                    </label>   
-                  </span>  
+                <section class="filterType">
+                    <p> Food </p>
+                    <section class="dataScroll">
+                      <span ng-repeat="food in foodOptions | limitTo:100">
+                        <label class="checkbox" for="{{food.foodId}}">
+                            <input type="checkbox" ng-model="selectedFoodOption" ng-change="filterByFood(food.foodId, selectedFoodOption, $index)" name="group" id="{{food.foodId}}" />
+                            {{food.description | capitalize}}
+                        </label>
+                      </span>
+                    </section>
                 </section>
-            </section>
 
-            <section>
-                <p> Nutrients </p>
-                <section class="dataScroll">
-                  <span ng-repeat="nutrient in nutrientShortOptions">
-                    <label class="checkbox" for="{{nutrient.id}}">
-                      <input type="checkbox" ng-model="selectedNutrientOption" ng-change="filterByNutrient(nutrient.id, selectedNutrientOption, $index)" name="group" id="{{nutrient.id}}" />
-                      {{nutrient.name | capitalize}}
-                    </label>   
-                  </span> 
-                </section> 
-            </section>
+                <section class="filterType">
+                    <p> Nutrients </p>
+                    <section class="dataScroll">
+                      <span ng-repeat="nutrient in nutrientOptions | limitTo:100">
+                        <label class="checkbox" for="{{nutrient.id}}">
+                            <input type="checkbox" ng-model="selectedNutrientOption" ng-change="filterByNutrient(nutrient.id, selectedNutrientOption, $index)" name="group" id="{{nutrient.id}}" />
+                            {{nutrient.name | capitalize}}
+                        </label>
+                      </span>
+                    </section>
+                </section>
 
-            <section>
-                <p> Calories </p>
-                <section class="dataScroll">
-                  <span ng-repeat="calorie in calories">
-                    <label class="checkbox" for="{{calorie.id}}">
-                      <input type="checkbox" ng-model="selection.ids[calorie.id]" name="calorie" id="{{calorie.id}}" />
-                      {{calorie.label | capitalize}}
-                    </label>   
-                  </span>  
-                <section class="dataScroll">
-            </section>  
-
-            <!-- <button class="advanced">Advanced</button> -->
+                <section class="filterType">
+                    <p> Calories </p>
+                    <section class="dataScroll">
+                      <span ng-repeat="calorie in calories">
+                        <label class="checkbox" for="{{calorie.id}}">
+                            <input type="checkbox" ng-model="selectedCalorieOption" name="calorie" id="{{calorie.id}}" ng-change="filterByCalories($index, selectedCalorieOption)" />
+                            {{calorie.label | capitalize}}
+                        </label>
+                      </span>
+                    </section >
+                </section>
+           <!-- <button class="advanced">Advanced</button> -->
+            </div>
        </div>
 
-
-
-       <div class="col-md-9 filter-results">
-
+       <div class="col-md-9 filter-results" ng-show="showResults" id="filterResults">
            <div class="info-message" ng-show="false"> 
                 <p><i class='info-icon'>i</i> Please select filter options in order to see data representations</p>
            </div>
@@ -81,7 +86,7 @@
                 <div class="row">
                     <div class="col-md-4">
                         <select name="chartTypeSelect" id="chartTypeSelect" ng-model="selectedChartType">
-                          <option ng-repeat="option in availableCharts" value="{{option.id}}" ng-selected="changeChartType()">{{option.name}}</option>
+                          <option ng-repeat="option in availableCharts" value="{{option.id}}" ng-selected="changeChartType">{{option.name}}</option>
                         </select>                        
                     </div>
                     <div class="col-md-4"></div>
@@ -96,6 +101,11 @@
                     <div class="col-md-1"></div>
 
                 </div>
+           </div>
+
+           <div class="pull-right">
+               <!--<button ng-click="saveChart">Save chart</button>-->
+               <a id="download" >Download image</a>
            </div>
        </div>
        

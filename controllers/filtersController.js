@@ -1,5 +1,9 @@
 app.controller("filtersController", function ($scope, $rootScope, $http, $modal, $location, $state, $q ) {
 
+  $scope.showDown = true;
+  $scope.showFilters = true;
+  $scope.showResults = true;
+
   $scope.foodName = [];
   $scope.nutrientAmount = [];
   $scope.nutrientName = [];
@@ -377,6 +381,32 @@ app.controller("filtersController", function ($scope, $rootScope, $http, $modal,
     return {labels: labels, infoData: infoData};
   }
 
+  $scope.filterByCalories = function(index, checked){
+    var foods = [],
+        nutrientAmounts = $scope.nutrientAmount,
+        category = $scope.calories[index],
+        minValue = category.minValue,
+        maxValue = category.maxValue,
+        current;
+
+    if(checked) {
+      for (var i = 0; i < nutrientAmounts.length; i++) {
+        current = nutrientAmounts[i];
+        if (current.NutrientID == 208 && minValue <= current.NutrientValue && maxValue >= current.NutrientValue) {
+          foods.push(current.FoodID);
+        }
+      }
+
+      for(var j = 0; j < $scope.foodOptions.length; j++){
+        var currentId = $scope.foodOptions[j].foodId;
+        if(foods.indexOf(currentId) == -1){
+          $scope.foodOptions.splice(j, 1);
+        }
+      }
+    }
+    console.log(foods);
+  };
+
   showPieChartDiagram = function(food){
     var info = getFoodNutrientData(food);
   
@@ -450,8 +480,46 @@ app.controller("filtersController", function ($scope, $rootScope, $http, $modal,
         fontSize: 15
       }
     });
+  };
+
+   window.addEventListener("resize", function(){
+  //  console.log("resizing", window.innerWidth);
+    var width = window.innerWidth;
+
+    if(width > 992){
+      $scope.showFilters = true;
+      $scope.showResults = true;
+
+    }else{
+      if($scope.showDown){
+        $scope.showFilters = false;
+        $scope.showResults = true;
+      }else{
+        $scope.showFilters = true;
+        $scope.showResults = false;
+      }
+
+    }
+
+    console.log($scope.showFilters, $scope.showResults);
 
 
+  });
+
+  $scope.saveChart = function(){
+    console.log("saving chart");
+   // $scope.downloadImage = $scope.canvas.toDataURL("image/png");
+    downloadCanvas(this, 'responseChart', 'canvasPng');
+
+  };
+
+  downloadCanvas = function downloadCanvas(link, canvasId, filename) {
+    link.href = document.getElementById(canvasId).toDataURL();
+    link.download = filename;
   }
+
+  document.getElementById('download').addEventListener('click', function() {
+    downloadCanvas(this, 'responseChart', 'canvas.png');
+  }, false);
 
 });

@@ -101,3 +101,48 @@
   background-color: #000000;
   border: 2px solid #616161;
 }
+
+@media (min-width: 992px){
+  .filtersShowHide{
+    display: none;
+  }
+}
+
+@media (max-width: 992px){
+  .filters-menu{
+    height: 100%;
+    border: 0px;
+
+    a span{
+      margin: 0;
+      top: 5px;
+      font-size: 20px;
+    }
+  }
+
+  .filtersShowHide{
+    display: inline-block;
+    margin: 5px 0 0 5px;
+    color: @teal-500;
+    text-decoration: none;
+  }
+
+  .filtersShowHide:hover{
+    text-decoration: none;
+    color: @teal-500;
+  }
+
+  .filterType {
+    .checkbox {
+      display: inline-block;
+      width: 45%;
+
+    }
+  }
+
+  .filter-results + .col-md-4{
+    width: 40%;
+  }
+
+
+}
