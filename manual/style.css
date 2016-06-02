@@ -1,0 +1,10 @@
+body {
+    margin: 0 auto;
+    width: 50%;
+    text-align: justify;
+}
+
+.middle{
+    text-align: center;
+    font-weight: bold;
+}
