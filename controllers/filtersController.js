@@ -3,6 +3,7 @@ app.controller("filtersController", function ($scope, $rootScope, $http, $modal,
   $scope.showDown = true;
   $scope.showFilters = true;
   $scope.showResults = true;
+  $scope.showDiagram = false;
 
   $scope.foodName = [];
   $scope.nutrientAmount = [];
@@ -144,13 +145,13 @@ app.controller("filtersController", function ($scope, $rootScope, $http, $modal,
  
   $scope.readJsons();
 
-  $scope.changeChartType = function(){
-    console.log("chartType", $scope.selectedChartType);
+  $scope.changeChartType = function(){    
     //console.log($scope.currentDiagram)
+    var type = $scope.currentDiagram;
 
     resetChartCanvas();
 
-    if($scope.currentDiagram){      
+    /*if($scope.currentDiagram){      
       var currentData = $scope.currentDiagram.data;
      // console.log("current data",currentData.labels);
 
@@ -163,6 +164,14 @@ app.controller("filtersController", function ($scope, $rootScope, $http, $modal,
             options: $scope.currentDiagram.options
           });
       
+    }*/
+
+    if($scope.nutritionForFoodFilter.length > 0){
+      if(type == 'pie'){
+        showPieChartDiagram($rootScope.nutritionForFoodFilter[0])
+      }else if(type == "line"){
+        showPieChartDiagram()
+      }
     }
   }
 
@@ -265,9 +274,9 @@ app.controller("filtersController", function ($scope, $rootScope, $http, $modal,
         resetChartCanvas();
       }
     }
-
-    showDiagramBasedOnNutrients();
     console.log($rootScope.nutritionForFoodFilter)
+    showDiagramBasedOnNutrients();
+    
   }
 
   $scope.filterByNutrient = function(param, checked, index){
@@ -331,6 +340,7 @@ app.controller("filtersController", function ($scope, $rootScope, $http, $modal,
   }
 
   resetChartCanvas = function(){
+    
     if($scope.chart)
      $scope.chart.destroy();
     
@@ -341,10 +351,18 @@ app.controller("filtersController", function ($scope, $rootScope, $http, $modal,
   showDiagramBasedOnNutrients = function(){
     var foods = $rootScope.nutritionForFoodFilter;
 
+    resetChartCanvas();
+    $scope.showDiagram = true;
+    console.log(foods.length);
     if(foods.length == 1){
-     // showPieChartDiagram(foods[0]);
+      console.log("Should pie chart");
+     showPieChartDiagram($rootScope.nutritionForFoodFilter[0])
+    }else{
+      console.log("should line chart")
+      resetChartCanvas();
+      showLineChart();
     }
-    showLineChart()
+    
   }
 
   getFoodNutrientData = function(food){
@@ -369,10 +387,10 @@ app.controller("filtersController", function ($scope, $rootScope, $http, $modal,
            // infoData.push(value);
           }
 
-         // if(value > 0.1){
+          if(newValue != undefined && value > 1){
             infoData.push(newValue);
             labels.push(name);
-        //  }
+          }
         }
         
       }
@@ -418,7 +436,7 @@ app.controller("filtersController", function ($scope, $rootScope, $http, $modal,
     resetChartCanvas();
 
     $scope.chart = new Chart($scope.canvas ,{
-      type: 'bar',
+      type: 'pie',
       data: {
         labels: info.labels,
         datasets: [
@@ -431,36 +449,40 @@ app.controller("filtersController", function ($scope, $rootScope, $http, $modal,
       options: options
     });
 
-    $scope.currentDiagram = {
-      data : {
-        labels: info.labels,
-        datasets: [
-          {
-            data: info.infoData,
-            backgroundColor: $rootScope.colors
-          }
-        ]
-      },
-      options: options
-    };
+    // $scope.currentDiagram = {
+    //   data : {
+    //     labels: info.labels,
+    //     datasets: [
+    //       {
+    //         data: info.infoData,
+    //         backgroundColor: $rootScope.colors
+    //       }
+    //     ]
+    //   },
+    //   options: options
+    // };
+
+   // $scope.currentDiagramFoods = 
 
     $scope.selectedChartType = 'pie';
   };
 
   showLineChart = function(){
+    console.log("SHOWING LINE CHART !!!")
     var currentFoods = $rootScope.nutritionForFoodFilter,
         results = [], datasets = [],
         options, data;
 
     for(var i = 0; i < currentFoods.length; i++){
-      var result = getFoodNutrientData(currentFoods[i]);
+      var result = getFoodNutrientData(currentFoods[i]);     
       results.push(result);
     }
 
-    for(var j = 0; j < results; j++){
+    for(var j = 0; j < results.length; j++){   
+    console.log(results[j]) 
       var newData = {
         label: currentFoods[j].description,
-        data: results[i].data,
+        data: results[j].infoData,
         backgroundColor: $rootScope.colors[j]
       };
 
@@ -482,8 +504,8 @@ app.controller("filtersController", function ($scope, $rootScope, $http, $modal,
     });
   };
 
+
    window.addEventListener("resize", function(){
-  //  console.log("resizing", window.innerWidth);
     var width = window.innerWidth;
 
     if(width > 992){
@@ -506,20 +528,13 @@ app.controller("filtersController", function ($scope, $rootScope, $http, $modal,
 
   });
 
-  $scope.saveChart = function(){
-    console.log("saving chart");
-   // $scope.downloadImage = $scope.canvas.toDataURL("image/png");
-    downloadCanvas(this, 'responseChart', 'canvasPng');
-
-  };
-
   downloadCanvas = function downloadCanvas(link, canvasId, filename) {
     link.href = document.getElementById(canvasId).toDataURL();
     link.download = filename;
   }
 
   document.getElementById('download').addEventListener('click', function() {
-    downloadCanvas(this, 'responseChart', 'canvas.png');
+    downloadCanvas(this, 'responseChart', 'chart.png');
   }, false);
 
 });

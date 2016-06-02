@@ -76,38 +76,32 @@
        </div>
 
        <div class="col-md-9 filter-results" ng-show="showResults" id="filterResults">
-           <div class="info-message" ng-show="false"> 
+           <div class="info-message" ng-show="!showDiagram"> 
                 <p><i class='info-icon'>i</i> Please select filter options in order to see data representations</p>
            </div>
 
-           <div ng-show="true">
+           <div ng-show="showDiagram">
                 <div class="filter-crumbels"></div>
 
-                <div class="row">
-                    <div class="col-md-4">
-                        <select name="chartTypeSelect" id="chartTypeSelect" ng-model="selectedChartType">
-                          <option ng-repeat="option in availableCharts" value="{{option.id}}" ng-selected="changeChartType">{{option.name}}</option>
-                        </select>                        
-                    </div>
-                    <div class="col-md-4"></div>
-                    <div class="col-md-4"><button class="editColors">Edit colors</button></div>
+                <div class="row chartOptionsRow">                   
+                    <select name="chartTypeSelect" id="chartTypeSelect" ng-model="selectedChartType">
+                      <option ng-repeat="option in availableCharts" value="{{option.id}}" ng-selected="changeChartType(option.id)">{{option.name}}</option>
+                    </select>                        
+                   
+                    <button class="editColors pull-right">Edit colors</button>
+                   
                 </div>
 
-                <div class="row">
-                    <div class="col-md-1"></div>
-                    <div class="col-md-10">
-                        <canvas id="responseChart" height="100%" width="100%"></canvas>
-                    </div>
-                    <div class="col-md-1"></div>
-
+                <div class="row">                   
+                  <div class="col-md-12">
+                    <canvas id="responseChart" height="100%" width="100%"></canvas>
+                  </div>   
                 </div>
-           </div>
-
-           <div class="pull-right">
-               <!--<button ng-click="saveChart">Save chart</button>-->
-               <a id="download" >Download image</a>
-           </div>
-       </div>
-       
+                <i>All the values are represented in grams</i>
+               <div class="pull-right">                 
+                 <a id="download" >Download image</a>
+               </div>
+           </div>           
+       </div>       
     </div>
 </div>
