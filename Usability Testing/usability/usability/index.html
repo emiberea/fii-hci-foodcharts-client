@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="publisher" content="blankdots.com"/>
+    <meta name="author" content="Stefan Negru"/>
+    <meta name="keywords" content="usabilityTest, template"/>
+    <meta name="description" content="usabilityTest Template with microdata"/>
+    <meta name="robots" content="noindex,nofollow"/>
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+    <title>Usability Test Plan Template</title>
+</head>
+
+<body>
+<header>
+    <h1>Usability Test Plan Template</h1>
+	<span id="logo"><a href="http://www.w3.org/html/logo/">
+        <script data-pagespeed-no-defer>//<![CDATA[
+        (function(){var g=this;function h(b,d){var a=b.split("."),c=g;a[0]in c||!c.execScript||c.execScript("var "+a[0]);for(var e;a.length&&(e=a.shift());)a.length||void 0===d?c[e]?c=c[e]:c=c[e]={}:c[e]=d};function l(b){var d=b.length;if(0<d){for(var a=Array(d),c=0;c<d;c++)a[c]=b[c];return a}return[]};function m(b){var d=window;if(d.addEventListener)d.addEventListener("load",b,!1);else if(d.attachEvent)d.attachEvent("onload",b);else{var a=d.onload;d.onload=function(){b.call(this);a&&a.call(this)}}};var n;function p(b,d,a,c,e){this.h=b;this.j=d;this.l=a;this.f=e;this.g={height:window.innerHeight||document.documentElement.clientHeight||document.body.clientHeight,width:window.innerWidth||document.documentElement.clientWidth||document.body.clientWidth};this.i=c;this.b={};this.a=[];this.c={}}function q(b,d){var a,c,e=d.getAttribute("data-pagespeed-url-hash");if(a=e&&!(e in b.c))if(0>=d.offsetWidth&&0>=d.offsetHeight)a=!1;else{c=d.getBoundingClientRect();var f=document.body;a=c.top+("pageYOffset"in window?window.pageYOffset:(document.documentElement||f.parentNode||f).scrollTop);c=c.left+("pageXOffset"in window?window.pageXOffset:(document.documentElement||f.parentNode||f).scrollLeft);f=a.toString()+","+c;b.b.hasOwnProperty(f)?a=!1:(b.b[f]=!0,a=a<=b.g.height&&c<=b.g.width)}a&&(b.a.push(e),b.c[e]=!0)}p.prototype.checkImageForCriticality=function(b){b.getBoundingClientRect&&q(this,b)};h("pagespeed.CriticalImages.checkImageForCriticality",function(b){n.checkImageForCriticality(b)});h("pagespeed.CriticalImages.checkCriticalImages",function(){r(n)});function r(b){b.b={};for(var d=["IMG","INPUT"],a=[],c=0;c<d.length;++c)a=a.concat(l(document.getElementsByTagName(d[c])));if(0!=a.length&&a[0].getBoundingClientRect){for(c=0;d=a[c];++c)q(b,d);a="oh="+b.l;b.f&&(a+="&n="+b.f);if(d=0!=b.a.length)for(a+="&ci="+encodeURIComponent(b.a[0]),c=1;c<b.a.length;++c){var e=","+encodeURIComponent(b.a[c]);131072>=a.length+e.length&&(a+=e)}b.i&&(e="&rd="+encodeURIComponent(JSON.stringify(t())),131072>=a.length+e.length&&(a+=e),d=!0);u=a;if(d){c=b.h;b=b.j;var f;if(window.XMLHttpRequest)f=new XMLHttpRequest;else if(window.ActiveXObject)try{f=new ActiveXObject("Msxml2.XMLHTTP")}catch(k){try{f=new ActiveXObject("Microsoft.XMLHTTP")}catch(v){}}f&&(f.open("POST",c+(-1==c.indexOf("?")?"?":"&")+"url="+encodeURIComponent(b)),f.setRequestHeader("Content-Type","application/x-www-form-urlencoded"),f.send(a))}}}function t(){var b={},d=document.getElementsByTagName("IMG");if(0==d.length)return{};var a=d[0];if(!("naturalWidth"in a&&"naturalHeight"in a))return{};for(var c=0;a=d[c];++c){var e=a.getAttribute("data-pagespeed-url-hash");e&&(!(e in b)&&0<a.width&&0<a.height&&0<a.naturalWidth&&0<a.naturalHeight||e in b&&a.width>=b[e].o&&a.height>=b[e].m)&&(b[e]={rw:a.width,rh:a.height,ow:a.naturalWidth,oh:a.naturalHeight})}return b}var u="";h("pagespeed.CriticalImages.getBeaconData",function(){return u});h("pagespeed.CriticalImages.Run",function(b,d,a,c,e,f){var k=new p(b,d,a,e,f);n=k;c&&m(function(){window.setTimeout(function(){r(k)},0)})});})();pagespeed.CriticalImages.Run('/mod_pagespeed_beacon','http://profs.info.uaic.ro/~stefan.negru/usability/','8MTpRKx7-f',true,false,'G2xvqA_83Q8');
+        //]]></script><img src="http://www.w3.org/html/logo/badge/html5-badge-h-css3-semantics.png" width="83" height="32" alt="HTML5 Powered with CSS3 / Styling, and Semantics" title="HTML5 Powered with CSS3 / Styling, and Semantics" data-pagespeed-url-hash="2866821017" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+    </a></span>
+
+</header>
+<section>
+    <h1 class="hidden">Usability Test Plan Section</h1>
+    <article class="usabilityTest">
+        <div class="usabilityTestInfo">
+            <h3>Test Plan for: <span>FoodCharts</span> <span>Filtering and export data</span></h3>
+
+            <div class="usabilityTestBackground">
+                <h4>Persona Type Tested: <span>Primary</span></h4>
+                <h4>Andreea</h4>
+                <h5>Context: <span>office room </span> </h5>
+                <h5>Duration: <span>5 minutes</span></h5>
+                <p>Complete the following before starting: <a href="testingscript.html">Greeting and Consent</a> &amp; <a href="userbackground.html">User Background Information</a>.</p>
+            </div>
+        </div>
+        <div class="usabilityTestObjectives">
+            <h5>Overall Objectives</h5>
+            <p>List the objectives/goals of the usability test; what you want to study or to evaluate. Be specific in what you want achieve, to evaluate with this test (e.g. obtain quality or quantitative regarding certain product/application components, accessibility evaluation, heuristic evaluation, cognitive walk-through etc.).           
+            <p>FoodCharts objectives:</p>
+            <ul>
+                <li>Primary goal is to improve the usability of a product.</li>
+                <li>Identify how intuitive are the filtering controls, for a user that sees them first time.</li>
+                <li>
+                    Evaluate the positioning on page and the interaction that the user will have with the menus, filters
+                    and diagrams.
+                </li>
+                <li>Observe user capacity to understand how filters work and the capacity un understand data from diagrams.</li>
+                <li>Observe user response to the color palette and scheme.</li>
+            </ul>
+        </div>
+        <div class="usabilityTestScenarios">
+            <h5>Scenario</h5>
+            <p>Use one scenario for each test. <strong>Do not use multiple scenarios for a usability test as it can confuse and frustrate the user</strong>. The scenarios used in the usability tests have a direct connection with the scenarios built for the <a href="http://profs.info.uaic.ro/~stefan.negru/personas/">personas document</a>. </p>
+            <p>
+                FoodCharts scenario: The user will access the application, select food category, apply filters and
+                visualize/download data from diagram.
+            </p>
+        </div>
+        <div class="usabilityTestDetails">
+            <div class="detailsLeft">
+                <h5>Tasks</h5>
+                <p>Write out the tasks for each persona type. <strong>Avoid complex tasks.</strong> Make sure the user is able to complete the test in the specified time interval. Assign an estimated completion time for each task.</p>               
+                <p>A user might complete a task in a shorter or greater time than the <strong>estimated time</strong>. If the <strong>completion time</strong> exceeds the estimated time then it there is a problem. Also a user might skip the current task thus the <strong>completion time</strong> would be <strong>0</strong>. </p>
+
+                <p>FoodCharts tasks:</p>
+                <ul>
+                    <li>Access application and select category - <span>30 seconds</span>;</li>
+                    <li>
+                        Access filter menu and select filters (understand relation between selecting a filter and the
+                        showed result) - <span>45 seconds</span>;
+                    </li>
+                    <li>Apply filter to view the nutritional value for 3 favourite food types - <span>2 minutes</span>;</li>
+                    <li>Change diagram type to have a different visualisation for the data - <span>30 seconds</span></li>
+                    <li>Download diagram and save it locally on the computer - <span>30 seconds</span></li>
+                    <li>Access settings page and change font option - <span>20 seconds</span></li>
+                </ul>
+
+                <h5>Post-test Questions</h5>  
+                <p>FoodCharts questions:</p>
+                <ul>
+                    <li>Question 1: Did you find hard to reach the filtering panel?</li> <strong>No</strong>
+                    <li>Question 2: How hard was it to understand the correlation between a selected filter and the diagram?</li> <strong>Not hard to understand</strong>
+                    <li>Question 3: How hard was it to find a filter that you want, when you tried to view the nutritional value for your favourite food?</li> <strong>Not looking something in particular</strong>
+                    <li>Question 4: Did you notice that you have the option to select from multiple diagram types, when you first time accessed the page?</li> <strong>Yes</strong>
+                    <li>Question 5: Do you think the color scheme of the application fits the application domain?</li><strong> Didn't observ the color scheme. It's basic.</strong>
+                    <li>Question 6: Do you have any issues to distinguish the colors from the diagram?</li><strong> No</strong>
+                    <li>Question 7: How hard was it to understand data from the diagram?</li><strong> Not hard, figured out it's about the nutrients and to compare them</strong>
+                    <li>Question 8: Do you think that the application showed interesting and helpful data?</li><strong> If you are interested in subject, yes.</strong>
+                </ul>
+            </div>
+            <div class="detailsRight">
+                <h5>Notes for Test Coordinator</h5>
+                <ul>
+                    <li>Remind the user that you would like them to 'think aloud' so that you can understand what they are thinking, about the task or the product/application;</li>
+                    <li>Read the user the scenario for the test;</li>
+                    <li>Read the user the tasks he has to complete. If the tasks are complex, you may want to put a sheet of paper in front of the user with each task written out;</li>
+                    <li>Record the user's actions, comments, questions, and body language (write them in the Test Observations section accompanied by video/audio).</li>
+                    <li>Don't offer help; let the user attempt to perform the task. If they ask for help reply with: "What do you think you/that would do?" "What do you think that means?".</li>
+                </ul>
+                <h5 id="references">References</h5>
+                <ul>
+                    <li>Fluid <a href="http://wiki.fluidproject.org/display/fluid/User+Testing">User Testing</a>;</li>
+                    <li><a href="http://www.usability.gov/templates/index.html">usability.gov</a> Templates;</li>
+                    <li><a href="http://www.amazon.com/Handbook-Usability-Testing-Effective-Communications/dp/0471594032">Handbook of Usability Testing</a> by Jeffrey Rubin;</li>
+                    <li><a href="http://www.amazon.com/A-Practical-Guide-Usability-Testing/dp/1841500208">A Practical Guide to Usability Testing</a> by Joseph S. Dumas and Janice C. Redish.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="otherDetails">
+            <h5>Other Notes</h5>
+            <p>Written/video/audio notes done attached to the usability test. These notes reflect the user thoughts and frustrations.</p>
+            <p>Andreea didn't express to much while testing. She saw that the filters applied on the food items. She saw the download button and used it. She liked that you can compare multiple foods and see a lot of data.</p>
+            <img alt="Andreea while testing" src="andreea.jpg" width="300">
+        </div>
+    </article>
+
+<article class="usabilityTest">
+        <div class="usabilityTestInfo">
+            <h3>Test Plan for: <span>FoodCharts</span> <span>Filtering and export data</span></h3>
+
+            <div class="usabilityTestBackground">
+                <h4>Persona Type Tested: <span>Primary</span> to eat healty</h4>
+                <h4>Name: Sabina</h4>
+                <h5>Context: <span>office room (an environment - location where the user is comfortable without distractions)</span> </h5>
+                <h5>Duration: <span>5 minutes</span></h5>
+                <p>Complete the following before starting: <a href="testingscript.html">Greeting and Consent</a> &amp; <a href="userbackground.html">User Background Information</a>.</p>
+            </div>
+        </div>
+        <div class="usabilityTestObjectives">
+            <h5>Overall Objectives</h5>
+            <p>List the objectives/goals of the usability test; what you want to study or to evaluate. Be specific in what you want achieve, to evaluate with this test (e.g. obtain quality or quantitative regarding certain product/application components, accessibility evaluation, heuristic evaluation, cognitive walk-through etc.).
+            
+            <p>FoodCharts objectives:</p>
+            <ul>
+                <li>Primary goal is to improve the usability of a product.</li>
+                <li>Identify how intuitive are the filtering controls, for a user that sees them first time.</li>
+                <li>
+                    Evaluate the positioning on page and the interaction that the user will have with the menus, filters
+                    and diagrams.
+                </li>
+                <li>Observe user capacity to understand how filters work and the capacity un understand data from diagrams.</li>
+                <li>Observe user response to the color palette and scheme.</li>
+            </ul>
+        </div>
+        <div class="usabilityTestScenarios">
+            <h5>Scenario</h5>
+            <p>Use one scenario for each test. <strong>Do not use multiple scenarios for a usability test as it can confuse and frustrate the user</strong>. The scenarios used in the usability tests have a direct connection with the scenarios built for the <a href="http://profs.info.uaic.ro/~stefan.negru/personas/">personas document</a>. </p>
+            <p>
+                FoodCharts scenario: The user will access the application, select food category, apply filters and
+                visualize/download data from diagram.
+            </p>
+        </div>
+        <div class="usabilityTestDetails">
+            <div class="detailsLeft">
+                <h5>Tasks</h5>
+                <p>Write out the tasks for each persona type. <strong>Avoid complex tasks.</strong> Make sure the user is able to complete the test in the specified time interval. Assign an estimated completion time for each task.</p>
+               
+                <p>A user might complete a task in a shorter or greater time than the <strong>estimated time</strong>. If the <strong>completion time</strong> exceeds the estimated time then it there is a problem. Also a user might skip the current task thus the <strong>completion time</strong> would be <strong>0</strong>. </p>
+
+                <p>FoodCharts tasks:</p>
+                <ul>
+                    <li>Access application and select category - <span>30 seconds</span>;</li>
+                    <li>
+                        Access filter menu and select filters (understand relation between selecting a filter and the
+                        showed result) - <span>45 seconds</span>;
+                    </li>
+                    <li>Apply filter to view the nutritional value for 3 favourite food types - <span>2 minutes</span>;</li>
+                    <li>Change diagram type to have a different visualisation for the data - <span>30 seconds</span></li>
+                    <li>Download diagram and save it locally on the computer - <span>30 seconds</span></li>
+                    <li>Access settings page and change font option - <span>20 seconds</span></li>
+                    <li>Change color them to a dark one - <span>20 seconds</span></li>
+                </ul>
+
+                <h5>Post-test Questions</h5>
+                <p>These questions could be presented to the user as a questionnaire or verbally asked.</p>
+                
+                <p>FoodCharts questions:</p>
+                <ul>
+                    <li>Question 1: Did you find hard to reach the filtering panel?</li> <strong>No</strong>
+                    <li>Question 2: How hard was it to understand the correlation between a selected filter and the diagram?</li> <strong>Was obvious to read the data.</strong>
+                    <li>Question 3: How hard was it to find a filter that you want, when you tried to view the nutritional value for your favourite food?</li><strong> Hard to find a specfic food.</strong>
+                    <li>Question 4: Did you notice that you have the option to select from multiple diagram types, when you first time accessed the page?</li> <strong>Yes, I saw the options</strong>
+                    <li>Question 5: Do you think the color scheme of the application fits the application domain?</li> <strong>Yes</strong>
+                    <li>Question 6: Do you have any issues to distinguish the colors from the diagram?</li> <strong>No</strong>
+                    <li>Question 7: How hard was it to understand data from the diagram?</li><strong> Wasn't hard</strong>
+                    <li>Question 8: Do you think that the application showed interesting and helpful data?</li> <strong>Yes.</strong>
+                </ul>
+            </div>
+            <div class="detailsRight">
+                <h5>Notes for Test Coordinator</h5>
+                <ul>
+                    <li>Remind the user that you would like them to 'think aloud' so that you can understand what they are thinking, about the task or the product/application;</li>
+                    <li>Read the user the scenario for the test;</li>
+                    <li>Read the user the tasks he has to complete. If the tasks are complex, you may want to put a sheet of paper in front of the user with each task written out;</li>
+                    <li>Record the user's actions, comments, questions, and body language (write them in the Test Observations section accompanied by video/audio).</li>
+                    <li>Don't offer help; let the user attempt to perform the task. If they ask for help reply with: "What do you think you/that would do?" "What do you think that means?".</li>
+                </ul>
+                <h5 id="references">References</h5>
+                <ul>
+                    <li>Fluid <a href="http://wiki.fluidproject.org/display/fluid/User+Testing">User Testing</a>;</li>
+                    <li><a href="http://www.usability.gov/templates/index.html">usability.gov</a> Templates;</li>
+                    <li><a href="http://www.amazon.com/Handbook-Usability-Testing-Effective-Communications/dp/0471594032">Handbook of Usability Testing</a> by Jeffrey Rubin;</li>
+                    <li><a href="http://www.amazon.com/A-Practical-Guide-Usability-Testing/dp/1841500208">A Practical Guide to Usability Testing</a> by Joseph S. Dumas and Janice C. Redish.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="otherDetails">
+            <h5>Other Notes</h5>
+            <p>Written/video/audio notes done attached to the usability test. These notes reflect the user thoughts and frustrations.</p>
+            <p>Sabina was interested to see multiple filters and she was excited when she find different types of food. She didn't understand the calorie filter. She would liked to be mentioned if the calories were for 100g or different amounts. She find it super cool to see what a food countains and that figs have a lot of potassium. Her boyfriend is colorblind and she sugested not to have different shades of the same color next to each other because she know that he doesn't distinguish it. The download button was not easy to see, but after she found it she was excited that you can download the diagram.</p>
+            <img alt="Sabina while testing" src="sabina.jpg" width="300">
+        </div>
+    </article>
+
+
+    <article class="usabilityTest">
+        <div class="usabilityTestInfo">
+            <h3>Test Plan for: <span>FoodCharts</span> <span>Filtering and export data</span></h3>
+
+            <div class="usabilityTestBackground">
+                <h4>Persona Type Tested: <span>Primary</span> - her fiance needs to be careful what he eats</h4>
+                <h4>Name: Bianca</h4>
+                <h5>Context: <span>office room </span> </h5>
+                <h5>Duration: <span>5 minutes</span></h5>
+                <p>Complete the following before starting: <a href="testingscript.html">Greeting and Consent</a> &amp; <a href="userbackground.html">User Background Information</a>.</p>
+            </div>
+        </div>
+        <div class="usabilityTestObjectives">
+            <h5>Overall Objectives</h5>
+            <p>List the objectives/goals of the usability test; what you want to study or to evaluate. Be specific in what you want achieve, to evaluate with this test (e.g. obtain quality or quantitative regarding certain product/application components, accessibility evaluation, heuristic evaluation, cognitive walk-through etc.).
+            
+            <p>FoodCharts objectives:</p>
+            <ul>
+                <li>Primary goal is to improve the usability of a product.</li>
+                <li>Identify how intuitive are the filtering controls, for a user that sees them first time.</li>
+                <li>
+                    Evaluate the positioning on page and the interaction that the user will have with the menus, filters
+                    and diagrams.
+                </li>
+                <li>Observe user capacity to understand how filters work and the capacity un understand data from diagrams.</li>
+                <li>Observe user response to the color palette and scheme.</li>
+            </ul>
+        </div>
+        <div class="usabilityTestScenarios">
+            <h5>Scenario</h5>
+            <p>Use one scenario for each test. <strong>Do not use multiple scenarios for a usability test as it can confuse and frustrate the user</strong>. The scenarios used in the usability tests have a direct connection with the scenarios built for the <a href="http://profs.info.uaic.ro/~stefan.negru/personas/">personas document</a>. </p>
+            <p>
+                FoodCharts scenario: The user will access the application, select food category, apply filters and
+                visualize/download data from diagram.
+            </p>
+        </div>
+        <div class="usabilityTestDetails">
+            <div class="detailsLeft">
+                <h5>Tasks</h5>
+                <p>Write out the tasks for each persona type. <strong>Avoid complex tasks.</strong> Make sure the user is able to complete the test in the specified time interval. Assign an estimated completion time for each task.</p>
+                
+                <p>A user might complete a task in a shorter or greater time than the <strong>estimated time</strong>. If the <strong>completion time</strong> exceeds the estimated time then it there is a problem. Also a user might skip the current task thus the <strong>completion time</strong> would be <strong>0</strong>. </p>
+
+                <p>FoodCharts tasks:</p>
+                <ul>
+                    <li>Access application and select category - <span>30 seconds</span>;</li>
+                    <li>
+                        Access filter menu and select filters (understand relation between selecting a filter and the
+                        showed result) - <span>45 seconds</span>;
+                    </li>
+                    <li>Apply filter to view the nutritional value for 3 favourite food types - <span>2 minutes</span>;</li>
+                    <li>Change diagram type to have a different visualisation for the data - <span>30 seconds</span></li>
+                    <li>Download diagram and save it locally on the computer - <span>30 seconds</span></li>
+                    <li>Access settings page and change font option - <span>20 seconds</span></li>
+                    <li>Change color them to a dark one - <span>20 seconds</span></li>
+                </ul>
+
+                <h5>Post-test Questions</h5>
+                <p>These questions could be presented to the user as a questionnaire or verbally asked.</p>
+                
+                <p>FoodCharts questions:</p>
+                <ul> 
+                    <li>Question 1: Did you find hard to reach the filtering panel?</li> <strong>"No"</strong>
+                    <li>Question 2: How hard was it to understand the correlation between a selected filter and the diagram?</li><strong> "Not hard to understand"</strong>
+                    <li>Question 3: How hard was it to find a filter that you want, when you tried to view the nutritional value for your favourite food?</li> <strong>"A little bit hard - to many types foods, a lot of data. A search field would be nice."</strong>
+                    <li>Question 4: Did you notice that you have the option to select from multiple diagram types, when you first time accessed the page?</li> <strong>"Yes"</strong>
+                    <li>Question 5: Do you think the color scheme of the application fits the application domain?</li><strong> "Yes, multiple distinctive colors"</strong>
+                    <li>Question 6: Do you have any issues to distinguish the colors from the diagram?</li><strong> "No"</strong>
+                    <li>Question 7: How hard was it to understand data from the diagram?</li> <strong>"Easy to undersand"</strong>
+                    <li>Question 8: Do you think that the application showed interesting and helpful data?</li> <strong>"Yes, because you can compare the nutritive values of foods"</strong>
+                </ul>
+            </div>
+            <div class="detailsRight">
+                <h5>Notes for Test Coordinator</h5>
+                <ul>
+                    <li>Remind the user that you would like them to 'think aloud' so that you can understand what they are thinking, about the task or the product/application;</li>
+                    <li>Read the user the scenario for the test;</li>
+                    <li>Read the user the tasks he has to complete. If the tasks are complex, you may want to put a sheet of paper in front of the user with each task written out;</li>
+                    <li>Record the user's actions, comments, questions, and body language (write them in the Test Observations section accompanied by video/audio).</li>
+                    <li>Don't offer help; let the user attempt to perform the task. If they ask for help reply with: "What do you think you/that would do?" "What do you think that means?".</li>
+                </ul>
+                <h5 id="references">References</h5>
+                <ul>
+                    <li>Fluid <a href="http://wiki.fluidproject.org/display/fluid/User+Testing">User Testing</a>;</li>
+                    <li><a href="http://www.usability.gov/templates/index.html">usability.gov</a> Templates;</li>
+                    <li><a href="http://www.amazon.com/Handbook-Usability-Testing-Effective-Communications/dp/0471594032">Handbook of Usability Testing</a> by Jeffrey Rubin;</li>
+                    <li><a href="http://www.amazon.com/A-Practical-Guide-Usability-Testing/dp/1841500208">A Practical Guide to Usability Testing</a> by Joseph S. Dumas and Janice C. Redish.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="otherDetails">
+            <h5>Other Notes</h5>
+            <p>Written/video/audio notes done attached to the usability test. These notes reflect the user thoughts and frustrations.</p>
+            
+            <p>Bianca saw the menu and sh was interested to see what the settings page was about. She is wearing glasses and she was happy to see that you have the option to select increase the font-size for the application. The default font-size was good for her. She was excited to see that you could combine the filters on different type of food groups, calories. But she was begining to be frustrated that she could not easily find the food that she wanted. She figured out herself that you can compare multiple types of foods in the same time on a diagram.</p>            
+            <p>It was not visible to her that all the filters that you applied were for the food list. She suggested to have the foods in a separeted coloumn, to easily see when they are filtered.</p>
+            <img alt="Bianca testing" src="bianca.jpg" height="300">
+        </div>
+    </article>
+
+
+
+    <article class="usabilityTestResults">
+        <div class="usabilityTestResultsInfo">
+            <h3>Test Results for: <span>FoodCharts</span> <span>Filtering and export data</span></h3>
+            <h4>Success Criteria</h4>
+            <p>A successful design has been achieved when:</p>
+            <ul>
+                <li>100% of users easily found the filtering panel</li>
+                <li>80% of users understand how the filters are applied</li>
+                <li>80% see the download button</li>
+            </ul>
+        </div>
+        <div class="usabilityTestResultsInfo">
+            <h4>Summary</h4>
+            <p>List major findings in list or table format for quick and easy reading. E.g. "A number of users (specify the number) did/found _______"</p>
+            <ul>
+                <li>3/3 users easily found the filters panel</li>
+                <li>2/3 found the download button</li>
+                <li>1/3 easily understood the filters</li>
+                <li>2/3 liked searching and comparing multiple foods</li>
+                <li>2/3 found the settings page and used it</li>
+                <li>These finding reflect the observation notes of the observer.</li>
+            </ul>
+        </div>
+        <div class="usabilityTestResultsInfo">
+            <h5>Demographics</h5>
+            <table class='testTable'><tbody>
+            <tr>
+                <th class='testTableTh'> User Number </th>
+                <th class='testTableTh'> Gender </th>
+                <th class='testTableTh'> Age Range </th>
+                <th class='testTableTh'> Persona Type </th>
+                <th class='testTableTh'> Technical Level </th>
+                <th class='testTableTh'> Background questions answers </th>
+            </tr>
+            <tr>
+                <td class='testTableTd'> User 1 </td>
+                <td class='testTableTd'>Female</td>
+                <td class='testTableTd'>25-30</td>
+                <td class='testTableTd'>Primary</td>
+                <td class='testTableTd'>High</td>
+                <td class='testTableTd'><i>See corespongin file</i></td>
+            </tr>
+            <tr>
+                <td class='testTableTd'> User 2 </td>
+                <td class='testTableTd'>Female</td>
+                <td class='testTableTd'>25-30</td>
+                <td class='testTableTd'>Primary</td>
+                <td class='testTableTd'>Medium</td>
+                <td class='testTableTd'><i>See corespongin file</i></td>
+            </tr>
+            <tr>
+                <td class='testTableTd'> User 3 </td>
+                <td class='testTableTd'>Female</td>
+                <td class='testTableTd'>25-30</td>
+                <td class='testTableTd'>Primary</td>
+                <td class='testTableTd'>High</td>
+                <td class='testTableTd'><i>See corespongin file</i></td>
+            </tr>
+            
+            </tbody></table>
+            <p>Literature recommends testing no more than <strong>five users</strong> and running as many small tests as you can afford, according <strong> to Nielsen, J. (1994). Usability Engineering, Academic Press Inc, p 165</strong>.</p>
+        </div>
+        <div class="usabilityTestResultsInfo">
+            <h5>Interaction Notes</h5>
+            <p>Enter a detailed descriptions of the participants' interactions in this table. The table can be separated by task, category, or whatever makes most sense for this test.</p>
+            <table class='testTable'><tbody>
+            <tr>
+                <th class='testTableTh'>User</th>
+                <th class='testTableTh'>Task 1</th>
+                <th class='testTableTh'>Task 2</th>
+                <th class='testTableTh'>Task 3</th>
+                <th class='testTableTh'>Task 4</th>
+                <th class='testTableTh'>Task 5</th>
+                <th class='testTableTh'>Task 6</th>
+            </tr>
+            <tr>
+                <td class='testTableTd'>User 1 </td>
+                <td class='testTableTd'>Access application and select category + 20s</td>
+                <td class='testTableTd'>Access filter menu and select filters (understand relation between selecting a filter and the
+                        showed result) + 60s</td>
+                <td class='testTableTd'>Apply filter to view the nutritional value for 3 favourite food types + 40s</td>
+                <td class='testTableTd'>Change diagram type to have a different visualisation for the data + 10s</td>
+                <td class='testTableTd'>Download diagram and save it locally on the computer + 0</td>
+                <td class='testTableTd'>Access settings page and change font option + 20s</td>
+            </tr>
+            <tr>
+                <td class='testTableTd'>User 2 </td>
+                <td class='testTableTd'>Access application and select category + 15s</td>
+                <td class='testTableTd'>Access filter menu and select filters (understand relation between selecting a filter and the
+                        showed result) + 50s</td>
+                <td class='testTableTd'>Apply filter to view the nutritional value for 3 favourite food types + 90s</td>
+                <td class='testTableTd'>Change diagram type to have a different visualisation for the data + 15s</td>
+                <td class='testTableTd'>Download diagram and save it locally on the computer + 30s</td>
+                <td class='testTableTd'>Access settings page and change font option + 20s</td>
+            </tr>
+            <tr>
+                <td class='testTableTd'>User 3 </td>
+                <td class='testTableTd'>Access application and select category + 15s</td>
+                <td class='testTableTd'>Access filter menu and select filters (understand relation between selecting a filter and the
+                        showed result) +30s</td>
+                <td class='testTableTd'>Apply filter to view the nutritional value for 3 favourite food types + 100s</td>
+                <td class='testTableTd'>Change diagram type to have a different visualisation for the data + 10s</td>
+                <td class='testTableTd'>Download diagram and save it locally on the computer + 20s</td>
+                <td class='testTableTd'>Access settings page and change font option + 0</td>
+            </tr>            
+            </tbody></table>
+            <p>A user might complete a task in a shorter or greater time than the <strong>estimated time</strong>. If the <strong>completion time</strong> exceeds the estimated time then it there is an issue with the design. Also a user might skip the current task thus the <strong>completion time</strong> would be <strong>0</strong>. </p>
+        </div>
+        <div class="usabilityTestResultsInfo">
+            <h5>Post-test Questions Answers</h5>
+            <p>Before the test write down some expected answers to these questions in order to compare them with the user's answers. Another solution is to establish the expected answers by using a control user.</p>
+        </div>
+        <div class="usabilityTestResultsInfo">
+            <h5>Test Observations</h5>
+            <p>Written/video/audio notes done attached to the usability test. These notes reflect the user thoughts and frustrations.</p>
+        </div>
+        <div class="otherDetails">
+            <h5>Potential Design Improvements</h5>
+            <p>Potential design improvements listed here, in a bullet or table format.</p>
+        </div>
+    </article>
+</section>
+
+<footer id="footer">
+    <span id="license"><a href="http://creativecommons.org/licenses/by/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/3.0/80x15.png" data-pagespeed-url-hash="3352115067" onload="pagespeed.CriticalImages.checkImageForCriticality(this);"/></a></span>
+</footer>
+</body>
+</html>
