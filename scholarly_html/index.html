@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>FoodCharts — Academic Report</title>
+    <link rel="stylesheet" href="scholarly.css">
+    <link rel="stylesheet" href="node_modules/prismjs/prism-coy.css">
+    <script src="node_modules/prismjs/prism.js" defer></script>
+</head>
+<body prefix="schema: http://schema.org/ xsd: http://www.w3.org/2001/XMLSchema# sa: https://ns.science.ai/">
+<header>
+    <p class="title">FoodCharts</p>
+    <p class="subtitle">Scholarly HTML</p>
+</header>
+<article id="what" typeof="schema:ScholarlyArticle" resource="#">
+    <h1>FoodCharts — Academic Report</h1>
+    <section>
+        <ol>
+            <li property="schema:author" typeof="sa:ContributorRole">
+                <a property="schema:author" href="https://github.com/emiberea" typeof="schema:Person">
+                    <span property="schema:givenName">Emanuel-Vasile</span>
+                    <span property="schema:familyName">Berea</span>
+                </a>
+                <sup property="sa:roleContactPoint" typeof="schema:ContactPoint">
+                    <a property="schema:email" href="mailto:vasile.berea@info.uaic.ro" title="corresponding author">
+                        &#9993;</a>
+                </sup>
+            </li>
+            <li property="schema:contributor" typeof="sa:ContributorRole">
+                <a property="schema:contributor" href="https://github.com/simonaSerseniuc" typeof="schema:Person">
+                    <span property="schema:givenName">Simona-Ecaterina</span>
+                    <span property="schema:familyName">Serseniuc</span>
+                </a>
+                <sup property="sa:roleContactPoint" typeof="schema:ContactPoint">
+                    <a property="schema:email" href="mailto:simona.serseniuc@info.uaic.ro" title="corresponding author">
+                        &#9993;</a>
+                </sup>
+            </li>
+        </ol>
+        <ol>
+            <li id="fii">
+                <a href="http://www.info.uaic.ro" typeof="schema:Corporation">
+                    <span property="schema:name">Faculty of Computer Science, Iasi</span>
+                </a>
+            </li>
+        </ol>
+    </section>
+    <section id="introduction">
+        <!-- TODO: upgrade attributes -->
+        <h2>Introduction</h2>
+        <p>
+            The project that we are describing in this paper is called "FoodCharts" and it is implemented
+            for the <a href="http://profs.info.uaic.ro/~busaco/teach/courses/hci/index.html">Human-Computer Interaction course</a>
+            held by Dr. Sabin-Corneliu Buraga at Faculty of Computer Science, “Al.I.Cuza” University, Iasi, in the second
+            semester of the 2015-2016 school year, and developed by the 2nd year MA students Berea Emanuel-Vasile
+            and Serseniuc Simona-Ecaterina.
+        </p>
+    </section>
+    <section typeof="sa:MaterialsAndMethods" id="motivation">
+        <h2>Motivation and Objectives</h2>
+        <aside typeof="schema:WPSideBar">
+            <p>
+                At the beginning of the semester we had to choose one project from the
+                <a href="http://profs.info.uaic.ro/~busaco/teach/courses/hci/projects/">project proposals list</a>
+                that is available on the course page. After a discussion regarding our option we decided
+                to go with the "Visualious" project as we find the requirements very interesting. The
+                project description reads:
+            <blockquote cite="http://profs.info.uaic.ro/~busaco/teach/courses/hci/projects/" property="schema:citation">
+                "Propose interesting means of complex visualization and faceted navigation concerning the information
+                provided by various <a href="https://github.com/caesar0301/awesome-public-datasets">online sources of
+                public datasets</a>.
+                Consider different interaction techniques/contexts concerning at least two classes of users,
+                software and hardware platforms, displays, and devices."
+            </blockquote>
+        </aside>
+        <p>
+            We organized our work, as required in the <a
+                href="http://profs.info.uaic.ro/~busaco/teach/courses/hci/hci-projects.html">project requirements
+            page</a>,
+            and we created a <a href="http://foodcharts.vrinceanu.com/">blog</a> where we can track the progress
+            of the work.
+        </p>
+        <p>
+            The main idea of the project is to create an application which allows the users to visualize
+            data in appealing way. The purpose of the project is not to provide a 100% working solution,
+            but to apply "Human-Computer Interaction" principles in order to create an application which
+            will suit the targeted user in every possible way.
+        </p>
+    </section>
+    <section id="etymology-and-branding">
+        <h2>Etymology and Branding</h2>
+        <section id="name-and-etymology">
+            <h3>Name and Etymology</h3>
+            <p>
+                Our first idea for the name was “Visualicious” – Visual + Delicious. Because we like seeing
+                data in appealing ways. But this name was taken by a graphic designer and we won’t like our
+                identities to be mistaken.
+            </p>
+            <p>
+                The second idea was “Visualistique” – Visual + Majestique. Based on the same principle as
+                “Visualicious”, but with a different adjective.
+            </p>
+            <p>
+                After founding mostly of our data that we are going to use, we agreed that our application
+                should be based on data about food. We did a long research and debate about what we should
+                finally name our application, and finally we decided to name it “FoodCharts”. We think that
+                it emphasize very close the application domain and what it wants to accomplish.
+            </p>
+        </section>
+        <section id="logo">
+            <h3>Logo</h3>
+            <p>
+                This is the logo that we created:
+            </p>
+            <figure typeof="sa:Image">
+                <img src="resources/food-charts.png" alt="FoodCharts logo" width="880" height="655">
+                <figcaption>
+                    FoodCharts logo
+                </figcaption>
+            </figure>
+            <p>
+                We used a metaphor by using a chart icon instead of the “h” letter and regarding the
+                font we decided to use “<a href="https://www.google.com/fonts/specimen/Fenix">Fenix</a>“. About the
+                color scheme we used just one color and we chose
+                “Teal” Color palette from <a href="https://www.google.com/design/spec/style/color.html">Google material
+                design documentation</a>. #009688 color.
+            </p>
+            <p>Keywords:</p>
+            <ul>
+                <li>food</li>
+                <li>charts</li>
+                <li>data</li>
+                <li>values</li>
+                <li>piecharts</li>
+                <li>information</li>
+            </ul>
+            <p>Values:</p>
+            <ul>
+                <li>healthy</li>
+                <li>vision</li>
+                <li>information</li>
+                <li>diagrams</li>
+            </ul>
+            <p>Food + Charts + Diagrams = FoodCharts</p>
+        </section>
+        <section id="color-scheme">
+            <h3>Color scheme and Typography</h3>
+            <p>For the color scheme we decided to create a simple and clean design, so we will use the mono option,
+                which will be based on the “Teal” Color palette, same as the logo. About the typography we will use "<a
+                        href="https://www.google.com/fonts/specimen/Source+Sans+Pro">Source Sans Pro</a>" font, with a
+                3:4 scale. The leading will start at 1.25 for a 16px font size and it will be increased with 0.25 at
+                every 4px for font size. Below we have our style tile:</p>
+            <figure typeof="sa:Image">
+                <img src="resources/FoodCharts_style_type_PNG-1.png" alt="FoodCharts style tile" width="880" height="655">
+                <figcaption>
+                    FoodCharts style tile
+                </figcaption>
+            </figure>
+        </section>
+    </section>
+    <section id="desing-patterns">
+        <h2>Design patterns</h2>
+        <p>This are the following design patterns that we are going to use:</p>
+        <p>Social interaction</p>
+        <ul>
+            <li>Filtering</li>
+            <li>No joking around</li>
+        </ul>
+        <p>Data editing</p>
+        <ul>
+            <li>Edit-in-place</li>
+        </ul>
+        <p>User actions and commands</p>
+        <ul>
+            <li>Progress indicator – loading masks</li>
+            <li>Interaction control</li>
+        </ul>
+        <p>Layout</p>
+        <ul>
+            <li>Liquid layout</li>
+        </ul>
+    </section>
+    <section id="personas">
+        <h2>Personas</h2>
+        <p>
+            Another requirement for this project is to do user research and create personas profiles for the possible users.
+            We used the <a href="http://profs.info.uaic.ro/~stefan.negru/personas/">template</a> that was provided on
+            the course page. We reviewed what type of user could be interested in using our application, and decided that
+            it should be a person who is interested about the nutritional values that the ingredients from the food contains.
+            Possible users could be: cooks, students at faculties about chemistry and food research, or people who may
+            have health problems and they want to follow a diet. We used the personas methodology and created profiles
+            for Primary/Secondary/Negative users. Our final personas template is available on this
+            <a href="http://foodcharts.vrinceanu.com/info/personas/personas.html">page</a> from our blog.
+        </p>
+    </section>
+    <section id="qoc">
+        <h2>QOC</h2>
+        <p>
+            Also we need to create use the QOC (Questions, Options and Criteria) methodology for this project, where we
+            asked questions regarding design key issues, we reviewed possible options to response to each question, and
+            we set an evaluation criteria concerning every option. An example in our case would be:
+            <cite>Can all users get the generated diagrams from our application?</cite> And the options and criterias are:
+            <cite>Option 1: Yes.</cite>
+            <cite>Criteria 1: Anyone that accesses the app and wants to use the generated diagram for the selected data can get the code for the diagram.</cite>
+            <cite>Criteria 2: Anyone that access the app and wants to use the generated diagram can copy the image</cite>
+            <cite>Option 2: No.</cite>
+            They full list of QOCs are available on
+            <a href="http://foodcharts.vrinceanu.com/info/qoc.html">our blog</a>.
+        </p>
+    </section>
+    <section id="sketches-wireframes-and-prototypes">
+        <h2>Sketches, Wireframes and Prototypes</h2>
+        <p>
+            The sketches are available also on out blog at this <a href="http://foodcharts.vrinceanu.com/info/wireframes/">link</a>.
+            For the wireframes we used a software tool named <a href="https://balsamiq.com/">balsamiq</a>. All the data
+            about this can be found <a href="http://foodcharts.vrinceanu.com/sketches-wireframes-and-prototypes/">here</a>.
+        </p>
+    </section>
+    <section id="storyboards-and-user-flows">
+        <h2>Storyboards and User Flows</h2>
+        <p>
+            Here they are on <a href="http://foodcharts.vrinceanu.com/storyboards/">our blog</a>.
+        </p>
+    </section>
+    <section id="implementation">
+        <h2>Implementation</h2>
+        <p>
+            For the implementation of this project we decided to use a classical client/server architecture, where we use
+            the server side to import the data from various sources like CSV and excel files that will be downloaded from
+            different data providers, and then parse and process it into usable JSON format that will be send to our
+            client application. Regarding the technology we used Symfony PHP framework for the server side, and on the
+            front-end we developed out application with AngularJS.
+        </p>
+    </section>
+    <section id="user-testing">
+        <h2>User testing</h2>
+        <p>
+            We also did some research on user testing, and created a test scenario, in which we ask the evaluated user
+            to do the following things: access the application, select a food category, apply filters and visualize/download
+            data from diagram. Regarding the persons that will test the application, we asked some of our colleagues from
+            work to help us. They were perfect fit, because they represent the primary persona type - technical users,
+            which are interested in food and diet. The list of tasks that they have to accomplish are the following:
+        </p>
+        <ul>
+            <li>Access application and select category - 30 seconds;</li>
+            <li>Access filter menu and select filters (understand relation between selecting a filter and the showed result) - 45 seconds;</li>
+            <li>Apply filter to view the nutritional value for 3 favourite food types - 2 minutes;</li>
+            <li>Change diagram type to have a different visualisation for the data - 30 seconds</li>
+            <li>Download diagram and save it locally on the computer - 30 seconds</li>
+            <li>Access settings page and change font option - 20 seconds</li>
+            <li>Change color them to a dark one - 20 seconds</li>
+        </ul>
+        <p>Here are some pictures taken with our testers:</p>
+        <img src="img/andreea.jpg" class="ourImg" alt="Andreea testing the application" width="400" />
+        <img src="img/bianca.jpg" class="ourImg" alt="Bianca testing the application" width="400" />
+        <img src="img/sabina.jpg" class="ourImg" alt="Sabina testing the application" width="400" />
+        <p>Our main objectives for user testing are:</p>
+        <ul>
+            <li>Primary goal is to improve the usability of a product.</li>
+            <li>Identify how intuitive are the filtering controls, for a user that sees them first time.</li>
+            <li>Evaluate the positioning on page and the interaction that the user will have with the menus, filters and diagrams.</li>
+            <li>Observe user capacity to understand how filters work and the capacity un understand data from diagrams.</li>
+            <li>Observe user response to the color palette and scheme.</li>
+        </ul>
+        <p>We also completed a <a href="http://foodcharts.vrinceanu.com/usability-testing/">Usability Test Plan Template</a> which was available on the course page.</p>
+    </section>
+    <section id="accessibility-report">
+        <h2>Accessibility Report</h2>
+        <p>
+            For the accessibility report, we user the guidelines from <a href="https://www.w3.org/">w3.org</a> that are
+            detailed in this article: <a href="https://www.w3.org/TR/WCAG20/">Web Content Accessibility Guidelines (WCAG) 2.0</a>.
+            And we used the tool available at this link <a href="https://www.w3.org/WAI/eval/report-tool/">www.w3.org/WAI/eval/report-tool/</a>
+            in order to generate a report about the accessibility solutions that were implemented in our application.
+        </p>
+        <p>The HTML template is available on our <a href="https://github.com/emiberea/fii-hci-foodcharts-client/tree/master/availability_report">GitHub repository</a>.</p>
+    </section>
+    <section typeof="sa:Conclusion" id="conclusion">
+        <h2>Conclusion</h2>
+        <p>
+            We consider that we manage to learn a lot of things about the field of <a href="http://profs.info.uaic.ro/~busaco/teach/courses/hci/index.html">Human-Computer Interaction course</a>
+            and that we tried to make the final deliverables as good as we can. We learned about: design patterns,
+            etymology and branding, personas, QOCs, sketches/wireframes/prototypes, storyboards, usability testing
+            and accessibility. Of course that there is plenty of space for improvements, especially regarding the
+            implementation, but we consider that we manage to make an idea about what benefits can have a proper study
+            about the Human-Computer link.
+        </p>
+    </section>
+    <section typeof="sa:ReferenceList" id="references">
+        <h2>References</h2>
+        <dl>
+            <dt>Human-Computer Interaction</dt>
+            <dd id="ref-nyt" typeof="schema:ScholarlyArticle" resource="http://profs.info.uaic.ro/~busaco/teach/courses/hci/">
+                <cite property="schema:name">
+                    <a href="http://profs.info.uaic.ro/~busaco/teach/courses/hci/">
+                        Human-Computer Interaction
+                    </a>
+                </cite>,
+                by
+                <span property="schema:author" typeof="schema:Person">
+                    <span property="schema:name">Dr. Sabin-Corneliu Buraga</span>
+                </span>;
+                .
+            </dd>
+            <dt>HCI blog</dt>
+            <dd id="ref-blog" typeof="schema:ScholarlyArticle" resource="http://pxdotpt.com/hci/">
+                <cite property="schema:name">
+                    <a href="http://pxdotpt.com/hci/">
+                        pxdotpt.com - HCI blog
+                    </a>
+                </cite>,
+                by
+                <span property="schema:author" typeof="schema:Person">
+                    <span property="schema:name">Alecsandru Grigoriu</span>
+                </span>;
+                .
+            </dd>
+            <dt>uiaccess.com</dt>
+            <dd id="ref-uiaccess" typeof="schema:ScholarlyArticle" resource="http://uiaccess.com/accessucd/background.html">
+                <cite property="schema:name">
+                    <a href="http://uiaccess.com/accessucd/background.html">
+                        Just Ask: Integrating Accessibility Throughout Design
+                    </a>
+                </cite>.
+            </dd>
+            <dt>www.iso.org</dt>
+            <dd id="ref-iso" typeof="schema:ScholarlyArticle" resource="https://www.iso.org/obp/ui/#iso:std:iso:9241:-171:ed-1:v1:en">
+                <cite property="schema:name">
+                    <a href="https://www.iso.org/obp/ui/#iso:std:iso:9241:-171:ed-1:v1:en">
+                        Ergonomics of human-system interaction
+                    </a>
+                </cite>.
+            </dd>
+            <dt>www.w3.org</dt>
+            <dd id="ref-w3" typeof="schema:ScholarlyArticle" resource="https://www.w3.org/TR/WCAG20/">
+                <cite property="schema:name">
+                    <a href="https://www.w3.org/TR/WCAG20/">
+                        Web Content Accessibility Guidelines
+                    </a>
+                </cite>.
+            </dd>
+            <dt>wiki.fluidproject.org</dt>
+            <dd id="ref-fluidproject" typeof="schema:ScholarlyArticle" resource="https://wiki.fluidproject.org/display/fluid/Persona+Categories">
+                <cite property="schema:name">
+                    <a href="https://wiki.fluidproject.org/display/fluid/Persona+Categories">
+                        Persona Categories and research
+                    </a>
+                </cite>.
+            </dd>
+            <dt>signalvnoise.com</dt>
+            <dd id="ref-signalvnoise" typeof="schema:ScholarlyArticle" resource="https://signalvnoise.com/posts/1926-a-shorthand-for-designing-ui-flows">
+                <cite property="schema:name">
+                    <a href="https://signalvnoise.com/posts/1926-a-shorthand-for-designing-ui-flows">
+                        A shorthand for designing UI flows
+                    </a>
+                </cite>.
+            </dd>
+        </dl>
+    </section>
+</article>
+<footer>
+    <p>
+        <a href="http://creativecommons.org/licenses/by/4.0/">CC-BY</a>
+        <a href="http://foodcharts.vrinceanu.com/">FoodCharts</a>
+    </p>
+</footer>
+</body>
+</html>
